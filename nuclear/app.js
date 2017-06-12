@@ -1,26 +1,15 @@
-var React = require("react");
-
-var ReactRouter = require("react-router");
+import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-var ReactDOM = require("react-dom");
+import { render } from "react-dom";
 
-var common = require("./modules/common");
-var HomePage = require("./components/home");
+import HomePage from "./components/home";
 
-var routes = (
+const routes = (
     <Router>
         <Route path="/" name="home" component={HomePage} />
     </Router>
 );
 
-//INITIAL ACTIONS
-
-var bootstrapActions = {
-    home: function(rs) {
-        //Actions go here.
-    }
-};
-
 //ENRTY POINT
 //render the view
-ReactDOM.render(routes, document.getElementById("main"));
+render(routes, document.getElementById("main"));
